@@ -1,0 +1,71 @@
+﻿@model IEnumerable<MICMAC_ISM_MVC.Models.Features>
+
+@{
+    ViewData["Title"] = "Initial Reachability Matrix (IRM)";
+    ViewData["Subtitle"] = ViewBag.Project;
+}
+
+
+
+<h1>@ViewBag.Title</h1>
+<h5>@ViewBag.Subtitle</h5>
+
+@if (ViewBag.status == false)
+{
+    <a asp-action="GenerateIRM" asp-route-id="@ViewBag.ProjectID" class="btn btn-success">Generate Initial Reachability Matrix</a>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VariableName)
+            </th>
+            @foreach (var item in Model.OrderBy(y => y.Code))
+            {
+                <th>
+                    @item.Code
+                </th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.OrderBy(y => y.Code))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VariableName)
+                </td>
+
+                @foreach (var item2 in Model.OrderBy(y => y.Code))
+                {
+                    if (item.IRM.Where(x => x.FeatureAID == item.ID && x.FeatureBID == item2.ID).Count() != 0)
+                    {
+                        <td>@item.IRM.Where(x => x.FeatureAID == item.ID && x.FeatureBID == item2.ID).First().IRM</td>
+                    }
+                    else
+                    {
+
+                        <td>??</td>
+                    }
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+<hr />
+@{
+    var parms = new Dictionary<string, string>
+                {
+                { "id", ViewBag.ProjectID.ToString() },
+                { "source", "IRM" }
+                };
+}
+<a asp-action="ClearAnalysisData" asp-all-route-data="parms" class="btn btn-sm btn-danger">Clear Analysis Data</a>

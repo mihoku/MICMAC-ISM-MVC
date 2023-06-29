@@ -1,0 +1,261 @@
+﻿@model IEnumerable<MICMAC_ISM_MVC.Models.Features>
+
+@{
+    ViewData["Title"] = "Final Reachability Matrix (FRM)";
+    ViewData["Subtitle"] = ViewBag.Project;
+}
+
+
+<h1>@ViewBag.Title</h1>
+<h5>@ViewBag.Subtitle</h5>
+
+@if (ViewBag.status == false)
+{
+    <a asp-action="GenerateFRM" asp-route-id="@ViewBag.ProjectID" class="btn btn-success">Generate Final Reachability Matrix</a>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Code
+            </th>
+            <th>
+                Variable Name
+            </th>
+
+            @foreach (var item in Model.OrderBy(y => y.Code))
+            {
+                <th>
+                    @item.Code
+                </th>
+            }
+            <th>Driving Power</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.OrderBy(y => y.Code))
+        {
+            <tr>
+                <td>
+                    @item.Code
+                </td>
+                <td>
+                    @item.VariableName
+                </td>
+
+
+
+                @foreach (var item2 in Model.OrderBy(y => y.Code))
+                {
+
+                    if (item.FRM.Where(x => x.FeatureAID == item.ID && x.FeatureBID == item2.ID).Count() != 0)
+                    {
+                        <td>
+                            @item.FRM.Where(x => x.FeatureAID == item.ID && x.FeatureBID == item2.ID).First().FRM
+                            @if (item.FRM.Where(x => x.FeatureAID == item.ID && x.FeatureBID == item2.ID).First().AddingTransitivity == true)
+                            {
+                                <strong>*</strong>
+                            }
+                        </td>
+                    }
+                    else
+                    {
+
+                        <td>??</td>
+                    }
+                }
+                @if (ViewBag.status == false)
+                {
+                    <td align="right"><strong>??</strong></td>
+                }
+                else
+                {
+                    <td align="right"><strong>@item.Coordinate.First().DrivingPower</strong></td>
+                }
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="2">Dependence</th>
+            @foreach (var item in Model.OrderBy(y => y.Code))
+            {
+                if (ViewBag.status == false)
+                {
+                    <th align="right">??</th>
+
+                }
+                else
+                {
+
+                    <th>
+                        @item.Coordinate.First().Dependence
+                    </th>
+                }
+            }
+            <th></th>
+        </tr>
+    </tfoot>
+</table>
+
+<strong>Notes:</strong> *Adding transitivity
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <h3>Transitivity Notes</h3>
+        <ol>
+            @foreach (var x in Model.OrderBy(y => y.Code))
+            {
+                if (x.TN.Count() != 0)
+                {
+                    foreach (var y in x.TN)
+                    {
+                        <li>@y.FeatureA.Code -> @Model.Where(v=>v.ID==y.FeatureBID).First().Code , @Model.Where(v=>v.ID==y.FeatureBID).First().Code -> @Model.Where(v=>v.ID==y.FeatureCID).First().Code</li>
+                    }
+                }
+            }
+        </ol>
+    </div>
+    <div class="col-md-8">
+        <script src="https://cdn.anychart.com/releases/8.11.1/js/anychart-base.min.js"></script>
+        <script>
+            anychart.onDocumentReady(function () {
+
+                // create data
+                var data = [
+            @Html.Raw(ViewBag.QuadrantData)
+                            ];
+
+                // create a chart
+                var chart = anychart.quadrant(data);
+
+                // set the chart title
+                chart.title("MICMAC Analysis: Dependence and Driving Power Quadrant");
+
+                chart.yScale().minimum(0);
+                chart.yScale().maximum(@ViewBag.VariableCount);
+                chart.xScale().minimum(0);
+                chart.xScale().maximum(@ViewBag.VariableCount);
+
+                chart.xAxis(0, { ticks: true, labels: true });
+                chart.yAxis(0, { ticks: true, labels: true });
+
+                // configure quarters
+                chart.quarters(
+                    {
+                        rightTop: {
+                            title: {
+                                text: "Linkage",
+                                fontSize: "16",
+                                fontWeight: "bold"
+                            }
+                        },
+                        rightBottom: {
+                            title: {
+                                text: "Dependent",
+                                fontSize: "16",
+                                fontWeight: "bold"
+                            }
+                        },
+                        leftTop: {
+                            title: {
+                                text: "Independent",
+                                fontSize: "16",
+                                fontWeight: "bold"
+                            }
+                        },
+                        leftBottom: {
+                            title: {
+                                text: "Autonomous",
+                                fontSize: "16",
+                                fontWeight: "bold"
+                            }
+                        },
+                    }
+                );
+
+                // create a label on the left-top quarter
+                var labelLTop = chart.quarters().leftTop().label();
+                labelLTop.text("IV");
+                labelLTop.fontColor("gray");
+                labelLTop.fontSize(16);
+                labelLTop.fontWeight("bold");
+                labelLTop.position("right-bottom");
+                labelLTop.offsetX(-20);
+                labelLTop.offsetY(-20);
+
+                // create a label on the right-top quarter
+                var labelRTop = chart.quarters().rightTop().label();
+                labelRTop.text("III");
+                labelRTop.fontColor("gray");
+                labelRTop.fontSize(16);
+                labelRTop.fontWeight("bold");
+                labelRTop.position("left-bottom");
+                labelRTop.offsetX(20);
+                labelRTop.offsetY(-20);
+
+                // create the first label on the left-bottom quarter
+                var labelLBottom1 = chart.quarters().leftBottom().label(0);
+                labelLBottom1.text("I");
+                labelLBottom1.fontColor("gray");
+                labelLBottom1.fontSize(16);
+                labelLBottom1.fontWeight("bold");
+                labelLBottom1.position("right-top");
+                labelLBottom1.offsetX(-20);
+                labelLBottom1.offsetY(20);
+
+                // create the second label on the left-bottom quarter
+                var labelLBottom2 = chart.quarters().leftBottom().label(1);
+                labelLBottom2.useHtml(true);
+                labelLBottom2.text("Driving Power &#8594;");
+                labelLBottom2.position("left-bottom");
+                labelLBottom2.offsetX(-20);
+                labelLBottom2.offsetY(-100);
+                labelLBottom2.rotation(-90);
+
+                // create the third label on the left-bottom quarter
+                var labelLBottom3 = chart.quarters().leftBottom().label(3);
+                labelLBottom3.useHtml(true);
+                labelLBottom3.text("Dependence Power &#8594;");
+                labelLBottom3.position("left-bottom");
+                labelLBottom3.offsetX(80);
+                labelLBottom3.offsetY(20);
+
+                // create a label on the right-bottom quarter
+                var labelRBottom = chart.quarters().rightBottom().label();
+
+                labelRBottom.text("II");
+                labelRBottom.fontColor("gray");
+                labelRBottom.fontSize(16);
+                labelRBottom.fontWeight("bold");
+                labelRBottom.position("left-top");
+                labelRBottom.offsetX(20);
+                labelRBottom.offsetY(20);
+
+                chart.tooltip().useHtml(true);
+                chart.tooltip().titleFormat("{%variable}");
+                chart.tooltip().format("Dependence: {%x}<br/>Driving Power: {%value}");
+
+                chart.labels().enabled(true);
+                chart.labels().format("{%variable}");
+                // set the container id
+                chart.container("container");
+
+                // initiate drawing the chart
+                chart.draw();
+            });
+        </script>
+        <div id="container" style="height:700px!important">
+        </div>
+        <hr />
+        @{
+            var parms = new Dictionary<string, string>
+        {
+        { "id", ViewBag.ProjectID.ToString() },
+        { "source", "FRM" }
+        };
+        }
+        <a asp-action="ClearAnalysisData" asp-all-route-data="parms" class="btn btn-sm btn-danger">Clear Analysis Data</a>
+    </div>
+</div>

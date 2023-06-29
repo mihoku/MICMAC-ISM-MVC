@@ -1,0 +1,123 @@
+﻿@model IEnumerable<MICMAC_ISM_MVC.Models.PartitionFeatureSet>
+
+@{
+    ViewData["Title"] = "Partitioning of Levels";
+    ViewData["Subtitle"] = ViewBag.Project;
+}
+
+
+<h1>@ViewBag.Title</h1>
+<h5>@ViewBag.Subtitle</h5>
+
+@if (ViewBag.status == false)
+{
+    <a asp-action="ExecutePartition" asp-route-id="@ViewBag.ProjectID" class="btn btn-success">Execute Partitioning of Levels</a>
+}
+
+@foreach(var item in Model.GroupBy(y=>y.Partition.Iteration))
+{
+    <h4>Iteration #@item.Key</h4>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Code
+                </th>
+                <th>
+                    Variable Name
+                </th>
+                <th>Reachability Set</th>
+                <th>Antecedent Set</th>
+                <th>Intersection Set</th>
+                <th>Level</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var feature in Model.Where(y=>y.Partition.Iteration==item.Key).ToList())
+            {
+                if (feature.SelectedLevel)
+                {
+                    <tr>
+                        <td>
+                            <strong>@feature.Feature.Code</strong>
+                        </td>
+                        <td>
+                            <strong>@feature.Feature.VariableName</strong>
+                        </td>
+                        <td>
+                            @foreach (var reach in feature.PartitionReachabilitySets.ToList())
+                            {
+                                <strong><i>@reach.Feature.Code </i></strong>
+                            }
+                        </td>
+                        <td>
+                            @foreach (var ant in feature.PartitionAntecedentSets.ToList())
+                            {
+                                <strong><i>@ant.Feature.Code </i></strong>
+                            }
+                        </td>
+                        <td>
+                            @foreach (var intersection in feature.PartitionIntersectionSets.ToList())
+                            {
+                                <strong><i>@intersection.Feature.Code </i></strong>
+                            }
+                        </td>
+                        <td>
+                            @if (feature.SelectedLevel)
+                            {
+                                <strong>@item.Key</strong>
+                            }
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td>
+                            @feature.Feature.Code
+                        </td>
+                        <td>
+                            @feature.Feature.VariableName
+                        </td>
+                        <td>
+                            @foreach (var reach in feature.PartitionReachabilitySets.ToList())
+                            {
+                                <i>@reach.Feature.Code </i>
+                            }
+                        </td>
+                        <td>
+                            @foreach (var ant in feature.PartitionAntecedentSets.ToList())
+                            {
+                                <i>@ant.Feature.Code </i>
+                            }
+                        </td>
+                        <td>
+                            @foreach (var intersection in feature.PartitionIntersectionSets.ToList())
+                            {
+                                <i>@intersection.Feature.Code </i>
+                            }
+                        </td>
+                        <td>
+                            @if (feature.SelectedLevel)
+                            {
+                                <strong>@item.Key</strong>
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+
+<hr />
+@{
+    var parms = new Dictionary<string, string>
+                {
+                { "id", ViewBag.ProjectID.ToString() },
+                { "source", "Partition" }
+                };
+}
+<a asp-action="ClearAnalysisData" asp-all-route-data="parms" class="btn btn-sm btn-danger">Clear Analysis Data</a>

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<MICMAC_ISM_MVC.Models.Features>
+
+@{
+    ViewData["Title"] = "Structural Self-Interaction Matrix (SSIM)"; 
+    ViewData["Subtitle"] = ViewBag.Project;
+    var seed = Model.Count();
+    var overall = Model.Count();
+}
+
+
+
+<h1>@ViewBag.Title</h1>
+<h5>@ViewBag.Subtitle</h5>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VariableName)
+            </th>
+            @foreach(var item in Model.OrderByDescending(y => y.Code))
+            {
+                <th>
+                    @item.Code
+                </th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+
+            @foreach (var item in Model.OrderBy(y => y.Code))
+            {
+            seed -= 1;
+            <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VariableName)
+            </td>
+
+                @foreach(var item2 in Model.OrderByDescending(y => y.Code).Take(seed))
+                {
+                    if (item.SSI.Where(x => x.FeatureAID == item.ID && x.FeatureBID == item2.ID).Count() != 0)
+                    {
+                        <td>
+                            @{
+                                var parms = new Dictionary<string, string>
+                {
+                { "id", item.ID.ToString() },
+                { "id2", item2.ID.ToString() }
+                };
+                            }
+                            <a asp-action="createinteraction" asp-all-route-data="parms" class="btn btn-sm btn-light"><strong>                            @item.SSI.Where(x => x.FeatureAID == item.ID && x.FeatureBID == item2.ID).First().InteractionType</strong></a>
+                    </td>
+
+                    }
+                    else
+                    {
+
+                        <td>
+                            @{
+                                var parms = new Dictionary<string, string>
+                {
+                { "id", item.ID.ToString() },
+                { "id2", item2.ID.ToString() }
+                };
+                            }
+                            <a asp-action="createinteraction" asp-all-route-data="parms" class="btn btn-sm btn-light"><strong>+</strong></a>
+                        
+                        </td>
+                    }
+                    
+                
+                        
+}
+                @for(int i = 0; i < overall - seed; i++)
+                {
+                    <td> </td>
+                }
+            </tr>
+}
+    </tbody>
+</table>

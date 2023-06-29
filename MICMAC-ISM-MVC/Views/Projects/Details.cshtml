@@ -1,0 +1,35 @@
+﻿@model MICMAC_ISM_MVC.Models.ProjectIdentitiy
+
+
+@{
+    ViewData["Title"] = "Project Profile";
+}
+
+<h1>Project Profile</h1>
+
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Organization)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Organization)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ID" class="btn btn-primary">Edit Project Profile</a>
+    <a asp-action="Index" class="btn btn-secondary">Back</a> 
+</div>

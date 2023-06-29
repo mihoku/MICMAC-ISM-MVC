@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "ISM-based Hierarchical Model";
+}
+
+<h1>@ViewBag.Title</h1>
+<h5>@ViewBag.Project</h5>
+
+<pre class="mermaid">
+    flowchart BT
+    @Html.Raw(ViewBag.datapoints)
+</pre>
+
+<hr />
+@{
+    var parms = new Dictionary<string, string>
+                {
+                { "id", ViewBag.ProjectID.ToString() },
+                { "source", "HierarchicalModel" }
+                };
+}
+<a asp-action="ClearAnalysisData" asp-all-route-data="parms" class="btn btn-sm btn-danger">Clear Analysis Data</a>
+
+<script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+

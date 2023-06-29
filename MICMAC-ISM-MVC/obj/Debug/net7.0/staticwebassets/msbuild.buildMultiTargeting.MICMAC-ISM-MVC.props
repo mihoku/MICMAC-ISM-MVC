@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MICMAC-ISM-MVC.props" />
+</Project>

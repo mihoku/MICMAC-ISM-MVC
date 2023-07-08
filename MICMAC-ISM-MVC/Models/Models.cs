@@ -25,6 +25,7 @@ namespace MICMAC_ISM_MVC.Models
         public Experts()
         {
             this.ExpertOpinions = new HashSet<ExpertOpinions>();
+            this.ExpertElaborations = new HashSet<ExpertElaborations>();
         }
         public int ID { get; set; }
         public string? Name { get; set; }
@@ -34,6 +35,7 @@ namespace MICMAC_ISM_MVC.Models
         [ForeignKey("ProjectID")]
         public virtual ProjectIdentitiy ProjectIdentity { get; set; }
         public virtual ICollection<ExpertOpinions> ExpertOpinions { get; set; }
+        public virtual ICollection<ExpertElaborations> ExpertElaborations { get; set; }
     }
 
     public class Features
@@ -221,6 +223,16 @@ namespace MICMAC_ISM_MVC.Models
         public virtual Experts? Expert { get; set; }
         [ForeignKey("StructuralSelfInteractionID")]
         public virtual StructuralSelfInteraction? SSI { get; set; }
+    }
+
+    public class ExpertElaborations
+    {
+        public int ID { get; set; }
+        public int ExpertID { get; set; }
+        public string Theme { get; set; }
+        public string Elaboration { get; set; }
+        [ForeignKey("ExpertID")]
+        public virtual Experts? Expert { get; set; }
     }
 
 }

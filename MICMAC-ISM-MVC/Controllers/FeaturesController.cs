@@ -235,7 +235,7 @@ namespace MICMAC_ISM_MVC.Controllers
             ViewData["status"] = _context.FinalReachabilityMatrix.Where(y => y.FeatureA.ProjectID == id).Count() != 0;
             ViewData["ProjectID"] = id;
             ViewData["Project"] = _context.ProjectIdentitiy.Find(id).Title;
-            ViewData["VariableCount"] = applicationDbContext.Count();
+            ViewData["VariableCount"] = applicationDbContext.Count()+1;
             var text = "";
             var coordinates = _context.MICMACCoordinate.Where(y => y.Feature.ProjectID == id).Include(y=>y.Feature).ToList();
             foreach (var item in coordinates.GroupBy(y => new { y.Dependence, y.DrivingPower })

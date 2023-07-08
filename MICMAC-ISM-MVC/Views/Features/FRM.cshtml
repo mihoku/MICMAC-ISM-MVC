@@ -133,9 +133,9 @@
                 // set the chart title
                 chart.title("MICMAC Analysis: Dependence and Driving Power Quadrant");
 
-                chart.yScale().minimum(1);
+                chart.yScale().minimum(0);
                 chart.yScale().maximum(@ViewBag.VariableCount);
-                chart.xScale().minimum(1);
+                chart.xScale().minimum(0);
                 chart.xScale().maximum(@ViewBag.VariableCount);
 
                 chart.xAxis(0, { ticks: true, labels: true });

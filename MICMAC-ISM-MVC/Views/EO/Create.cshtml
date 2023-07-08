@@ -1,0 +1,47 @@
+﻿@model MICMAC_ISM_MVC.Models.ExpertOpinions
+
+@{
+    ViewData["Title"] = "Record Expert Opinion";
+    ViewData["Title2"] = "Interaction between " + ViewBag.f1 + " and " + ViewBag.f2;
+}
+
+<h1>@ViewBag.Title</h1>
+
+<h4>@ViewBag.Title2</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ExpertID" class="control-label"></label>
+                <select asp-for="ExpertID" class ="form-control" asp-items="ViewBag.ExpertID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="InteractionType" class="control-label"></label>
+                <select asp-for="InteractionType" class="form-control" asp-items="ViewBag.InteractionType"></select>
+            </div>
+@*            <div class="form-group">
+                <label asp-for="StructuralSelfInteractionID" class="control-label"></label>
+                <select asp-for="StructuralSelfInteractionID" class ="form-control" asp-items="ViewBag.StructuralSelfInteractionID"></select>
+            </div>*@
+            <input type="hidden" asp-for="StructuralSelfInteractionID" value="@ViewBag.StructuralSelfInteractionID" />
+            <div class="form-group">
+                <label asp-for="Opinion" class="control-label"></label>
+                <input asp-for="Opinion" class="form-control" />
+                <span asp-validation-for="Opinion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

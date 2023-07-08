@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MICMAC_ISM_MVC.Models.ExpertOpinions>
+
+
+<p>
+    <a asp-action="Create" asp-route-id="@ViewBag.SSIID" class="btn btn-primary">Add Expert Opinion</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Expert)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Opinion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InteractionType)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Expert.Name)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Opinion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InteractionType)
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

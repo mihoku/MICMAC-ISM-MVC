@@ -215,6 +215,7 @@ namespace MICMAC_ISM_MVC.Models
         public int ID { get; set; }
         public int ExpertID { get; set; }
         public int StructuralSelfInteractionID { get; set; }
+        public string Opinion { get; set; }
         public string InteractionType { get; set; }
         [ForeignKey("ExpertID")]
         public virtual Experts? Expert { get; set; }

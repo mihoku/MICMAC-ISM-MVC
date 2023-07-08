@@ -1,0 +1,44 @@
+﻿@model MICMAC_ISM_MVC.Models.ExpertOpinions
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ExpertOpinions</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="ExpertID" class="control-label"></label>
+                <select asp-for="ExpertID" class="form-control" asp-items="ViewBag.ExpertID"></select>
+                <span asp-validation-for="ExpertID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StructuralSelfInteractionID" class="control-label"></label>
+                <select asp-for="StructuralSelfInteractionID" class="form-control" asp-items="ViewBag.StructuralSelfInteractionID"></select>
+                <span asp-validation-for="StructuralSelfInteractionID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InteractionType" class="control-label"></label>
+                <input asp-for="InteractionType" class="form-control" />
+                <span asp-validation-for="InteractionType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

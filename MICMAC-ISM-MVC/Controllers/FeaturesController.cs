@@ -9,9 +9,11 @@ using MICMAC_ISM_MVC.Data;
 using MICMAC_ISM_MVC.Models;
 using System.Drawing.Drawing2D;
 using System.Runtime.CompilerServices;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MICMAC_ISM_MVC.Controllers
 {
+    [Authorize]
     public class FeaturesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -41,15 +43,20 @@ namespace MICMAC_ISM_MVC.Controllers
             //ViewData["Subtitle"] = featureA.ProjectIdentity.Title;
             List <String> interaction = new List<String>() { "V", "A", "X", "O" };
             ViewData["ProjectID"] = featureA.ProjectID;
-            if (featureA.SSI.Where(y => y.FeatureBID == id2).Count() != 0)
+            ViewData["ExistingStatus"] = _context.StructuralSelfInteractions.Where(y => y.FeatureAID == id && y.FeatureBID == id2).Count() != 0;
+            if (_context.StructuralSelfInteractions.Where(y => y.FeatureAID==id&&y.FeatureBID == id2).Count() != 0)
             {
-                var existing = featureA.SSI.Where(y => y.FeatureBID == id2).First();
+                var existing = _context.StructuralSelfInteractions.Where(y => y.FeatureAID == id && y.FeatureBID == id2).First();
+                //ViewData["SelectedInteraction"] = existing.InteractionType;
+                ViewData["SSIID"] = existing.ID;
                 ViewData["InteractionType"] = new SelectList(interaction,existing.InteractionType);
                 return View();
             }
             else
             {
-                ViewData["InteractionType"] = new SelectList(interaction);
+                ViewData["SSIID"] = 1;
+                var SelectedInteraction = "V";
+                ViewData["InteractionType"] = new SelectList(interaction,SelectedInteraction);
                 return View();
             }
 
@@ -228,7 +235,7 @@ namespace MICMAC_ISM_MVC.Controllers
             ViewData["status"] = _context.FinalReachabilityMatrix.Where(y => y.FeatureA.ProjectID == id).Count() != 0;
             ViewData["ProjectID"] = id;
             ViewData["Project"] = _context.ProjectIdentitiy.Find(id).Title;
-            ViewData["VariableCount"] = applicationDbContext.Count() + 1;
+            ViewData["VariableCount"] = applicationDbContext.Count();
             var text = "";
             var coordinates = _context.MICMACCoordinate.Where(y => y.Feature.ProjectID == id).Include(y=>y.Feature).ToList();
             foreach (var item in coordinates.GroupBy(y => new { y.Dependence, y.DrivingPower })
@@ -428,36 +435,46 @@ namespace MICMAC_ISM_MVC.Controllers
             var diagramObject = _context.PartitionFeatureSet.Where(y => y.Partition.ProjectID == id && y.SelectedLevel == true).Include(y => y.Partition).Include(y=>y.Feature).ToList();
             var text = "";
             ViewData["ProjectID"] = id;
-            ViewData["Project"] = _context.ProjectIdentitiy.Find(id).Title;
-            var diagramObject_grouped = diagramObject.GroupBy(y => y.Partition.Iteration).ToList();
-            var partition = "";
-            foreach (var x in diagramObject_grouped.OrderByDescending(a=>a.Key))
-            {                
-                var part = "P" + x.Key.ToString();
-                
-                //partition.Add(part);
-                text += "subgraph " + part+"\n direction LR \n";
-                List<string> features = new List<string>();
-                foreach(var y in diagramObject.Where(t => t.Partition.Iteration == x.Key))
+            if (diagramObject.Count()!= 0)
+            {
+                ViewData["Project"] = _context.ProjectIdentitiy.Find(id).Title;
+                var diagramObject_grouped = diagramObject.GroupBy(y => y.Partition.Iteration).ToList();
+                var partition = "";
+                foreach (var x in diagramObject_grouped.OrderByDescending(a => a.Key))
                 {
-                    var s = y.Feature.Code+"[&quot;"+y.Feature.Code + " <hr/> " + y.Feature.VariableName.Replace(")","").Replace("(", "") + "&quot;]";
-                    features.Add(s);
+                    var part = "P" + x.Key.ToString();
+
+                    //partition.Add(part);
+                    text += "subgraph " + part + "\n direction LR \n";
+                    List<string> features = new List<string>();
+                    foreach (var y in diagramObject.Where(t => t.Partition.Iteration == x.Key))
+                    {
+                        var s = y.Feature.Code + "[&quot;" + y.Feature.Code + " <hr/> " + y.Feature.VariableName.Replace(")", "").Replace("(", "") + "&quot;]";
+                        features.Add(s);
+                    }
+                    text += string.Join(" <--> ", features.Select(i => i));
+                    //if (x.Key != 1)
+                    //{
+                    //    text += " --> ";
+                    //}
+                    text += "\n end \n";
+                    if (partition != "")
+                    {
+                        text += "\n" + partition + " --> " + part + "\n";
+                    }
+                    partition = part;
                 }
-                text+=string.Join(" <--> ", features.Select(i => i));
-                //if (x.Key != 1)
-                //{
-                //    text += " --> ";
-                //}
-                text += "\n end \n";
-                if (partition != "")
-                {
-                    text += "\n" + partition + " --> " + part+"\n";
-                }
-                partition = part;
+                //text += string.Join(" --> ", partition.Select(i => i));
+                ViewData["datapoints"] = text;
+                return View();
             }
-            //text += string.Join(" --> ", partition.Select(i => i));
-            ViewData["datapoints"] = text;
-            return View();
+            else
+            {
+                text += "no-data";
+                ViewData["datapoints"] = text;
+                return View();
+            }
+
         }
         
         public IActionResult ClearAnalysisData(int id, string source)

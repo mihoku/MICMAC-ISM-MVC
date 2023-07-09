@@ -37,6 +37,21 @@
 
             @foreach (var feature in Model.Where(y=>y.Partition.Iteration==item.Key).ToList())
             {
+                List<string> prs = new List<string>();
+                List<string> pas = new List<string>();
+                List<string> pis = new List<string>();
+                foreach (var reach in feature.PartitionReachabilitySets.ToList())
+                {
+                    prs.Add(reach.Feature.Code);
+                }
+                foreach (var ant in feature.PartitionAntecedentSets.ToList())
+                {
+                    pas.Add(ant.Feature.Code);
+                }
+                foreach (var intersection in feature.PartitionIntersectionSets.ToList())
+                {
+                    pis.Add(intersection.Feature.Code);
+                }
                 if (feature.SelectedLevel)
                 {
                     <tr>
@@ -47,22 +62,13 @@
                             <strong>@feature.Feature.VariableName</strong>
                         </td>
                         <td>
-                            @foreach (var reach in feature.PartitionReachabilitySets.ToList())
-                            {
-                                <strong><i>@reach.Feature.Code </i></strong>
-                            }
+                            <strong>@string.Join(", ", prs.Select(i => i))</strong>
                         </td>
                         <td>
-                            @foreach (var ant in feature.PartitionAntecedentSets.ToList())
-                            {
-                                <strong><i>@ant.Feature.Code </i></strong>
-                            }
+                            <strong>@string.Join(", ", pas.Select(i => i))</strong>
                         </td>
                         <td>
-                            @foreach (var intersection in feature.PartitionIntersectionSets.ToList())
-                            {
-                                <strong><i>@intersection.Feature.Code </i></strong>
-                            }
+                            <strong>@string.Join(", ", pis.Select(i => i))</strong>
                         </td>
                         <td>
                             @if (feature.SelectedLevel)
@@ -82,22 +88,13 @@
                             @feature.Feature.VariableName
                         </td>
                         <td>
-                            @foreach (var reach in feature.PartitionReachabilitySets.ToList())
-                            {
-                                <i>@reach.Feature.Code </i>
-                            }
+                            @string.Join(", ", prs.Select(i => i))
                         </td>
                         <td>
-                            @foreach (var ant in feature.PartitionAntecedentSets.ToList())
-                            {
-                                <i>@ant.Feature.Code </i>
-                            }
+                            @string.Join(", ", pas.Select(i => i))
                         </td>
                         <td>
-                            @foreach (var intersection in feature.PartitionIntersectionSets.ToList())
-                            {
-                                <i>@intersection.Feature.Code </i>
-                            }
+                            @string.Join(", ", pis.Select(i => i))
                         </td>
                         <td>
                             @if (feature.SelectedLevel)

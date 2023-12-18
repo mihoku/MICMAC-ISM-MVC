@@ -16,7 +16,7 @@ namespace MICMAC_ISM_MVC.Data
         public DbSet<MICMAC_ISM_MVC.Models.Experts> Experts { get; set; } = default!;
         public DbSet<MICMAC_ISM_MVC.Models.StructuralSelfInteraction> StructuralSelfInteractions { get; set; } = default!;
         public DbSet<MICMAC_ISM_MVC.Models.ExpertOpinions> ExpertOpinions { get; set; } = default!;
-        public DbSet<MICMAC_ISM_MVC.Models.ExpertElaborations> ExpertElaborations { get; set; } = default!;
+
         public DbSet<MICMAC_ISM_MVC.Models.InitialReachabilityMatrix> InitialReachabilityMatrix { get; set; } = default!;
         public DbSet<MICMAC_ISM_MVC.Models.FinalReachabilityMatrix> FinalReachabilityMatrix { get; set; } = default!;
         public DbSet<MICMAC_ISM_MVC.Models.TransitivityNotes> TransitivityNotes { get; set; } = default!;

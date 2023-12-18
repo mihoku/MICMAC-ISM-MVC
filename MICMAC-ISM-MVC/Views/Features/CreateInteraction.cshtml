@@ -23,34 +23,18 @@
 
             <div class="form-group">
                 <label asp-for="InteractionType" class="control-label"></label>
-                <select asp-for="InteractionType" class ="form-control" asp-items="ViewBag.InteractionType"></select>
+                <select asp-for="InteractionType" class ="form-control" asp-items="@ViewBag.InteractionType"></select>
             </div>
 
             <input type="hidden" asp-for="FeatureAID" value="@ViewBag.FeatureAID" />
             <input type="hidden" asp-for="FeatureBID" value="@ViewBag.FeatureBID" />
 
             <div class="form-group">
-                <input type="submit" value="Save Interaction" class="btn btn-primary" /> <a asp-action="SSI" asp-route-id="@ViewBag.ProjectID" class="btn btn-secondary">Back</a>
+                <input type="submit" value="Save Interaction" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
-
-<hr />
-<h5>Expert Opinions</h5>
-@if (ViewBag.ExistingStatus)
-{
-    <div id="expertOpinionContainer"></div>
-    <script>
-        $.get('@Url.Action("Data", "EO")' +'/'+ '@ViewBag.SSIID', function (content) {
-            $("#expertOpinionContainer").html(content);
-        });
-    </script>
-}
-else
-{
-    <p>No expert opinions recorded.</p>
-}
 
 @*<div>
     <a asp-action="SSI" asp-route="@ViewBag.ProjectID">Back to SSI Matrix</a>

@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MICMAC_ISM_MVC.Data;
 using MICMAC_ISM_MVC.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace MICMAC_ISM_MVC.Controllers
 {
-    [Authorize]
     public class ProjectsController : Controller
     {
         private readonly ApplicationDbContext _context;

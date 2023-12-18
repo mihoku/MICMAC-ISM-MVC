@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MICMAC_ISM_MVC.Data;
 using MICMAC_ISM_MVC.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace MICMAC_ISM_MVC.Controllers
 {
-    [Authorize]
     public class ExpertsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -65,10 +63,9 @@ namespace MICMAC_ISM_MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,Name,Description,Organization,ProjectID")] Experts experts)
         {
-            experts.ID = 0;    
-            _context.Experts.Add(experts);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index), new { id=experts.ProjectID });
+                _context.Add(experts);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
 
         }
 

@@ -54,19 +54,7 @@
                 { "id2", item2.ID.ToString() }
                 };
                             }
-                            @if (item.SSI.Where(x => x.FeatureAID == item.ID && x.FeatureBID == item2.ID).First().InteractionType == "V" || item.SSI.Where(x => x.FeatureAID == item.ID && x.FeatureBID == item2.ID).First().InteractionType == "A")
-                            {
-                              <a asp-action="createinteraction" asp-all-route-data="parms" class="btn btn-sm btn-primary"><strong>@item.SSI.Where(x => x.FeatureAID == item.ID && x.FeatureBID == item2.ID).First().InteractionType</strong></a>   
-                            }
-                            else if(item.SSI.Where(x => x.FeatureAID == item.ID && x.FeatureBID == item2.ID).First().InteractionType == "X")
-                            {
-                              <a asp-action="createinteraction" asp-all-route-data="parms" class="btn btn-sm btn-success"><strong>@item.SSI.Where(x => x.FeatureAID == item.ID && x.FeatureBID == item2.ID).First().InteractionType</strong></a>   
-                            }
-                            else 
-                            {
-                                <a asp-action="createinteraction" asp-all-route-data="parms" class="btn btn-sm btn-danger"><strong>@item.SSI.Where(x => x.FeatureAID == item.ID && x.FeatureBID == item2.ID).First().InteractionType</strong></a>
-                            }
-
+                            <a asp-action="createinteraction" asp-all-route-data="parms" class="btn btn-sm btn-light"><strong>                            @item.SSI.Where(x => x.FeatureAID == item.ID && x.FeatureBID == item2.ID).First().InteractionType</strong></a>
                     </td>
 
                     }

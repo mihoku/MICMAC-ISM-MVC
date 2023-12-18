@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MICMAC-ISM\\MICMAC-ISM\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC.csproj": {}
+    "D:\\Projects\\.NET\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC.csproj": {}
   },
   "projects": {
-    "D:\\MICMAC-ISM\\MICMAC-ISM\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC.csproj": {
+    "D:\\Projects\\.NET\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MICMAC-ISM\\MICMAC-ISM\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC.csproj",
+        "projectUniqueName": "D:\\Projects\\.NET\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC.csproj",
         "projectName": "MICMAC-ISM-MVC",
-        "projectPath": "D:\\MICMAC-ISM\\MICMAC-ISM\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC.csproj",
-        "packagesPath": "C:\\Users\\reza.darmawan\\.nuget\\packages\\",
-        "outputPath": "D:\\MICMAC-ISM\\MICMAC-ISM\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\obj\\",
+        "projectPath": "D:\\Projects\\.NET\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC.csproj",
+        "packagesPath": "C:\\Users\\Reza\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\.NET\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\reza.darmawan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Reza\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -86,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -9,133 +9,153 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MICMAC_ISM_MVC
 build_property.RootNamespace = MICMAC_ISM_MVC
-build_property.ProjectDir = D:\Projects\.NET\MICMAC-ISM-MVC\MICMAC-ISM-MVC\MICMAC-ISM-MVC\
+build_property.ProjectDir = D:\Projects\.NET\MICMAC-ISM-MVC\micmac-github\MICMAC-ISM-MVC\MICMAC-ISM-MVC\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Projects\.NET\MICMAC-ISM-MVC\MICMAC-ISM-MVC\MICMAC-ISM-MVC
+build_property.MSBuildProjectDirectory = D:\Projects\.NET\MICMAC-ISM-MVC\micmac-github\MICMAC-ISM-MVC\MICMAC-ISM-MVC
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Experts/Create.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/EO/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRU9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/EO/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRU9cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/EO/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRU9cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/EO/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRU9cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/EO/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRU9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Experts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJ0c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Experts/Delete.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Experts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJ0c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Experts/Details.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Experts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJ0c1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Experts/Edit.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Experts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJ0c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Experts/Index.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Experts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJ0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/Create.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVhdHVyZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/CreateInteraction.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/CreateInteraction.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVhdHVyZXNcQ3JlYXRlSW50ZXJhY3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/Delete.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVhdHVyZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/Details.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVhdHVyZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/Edit.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVhdHVyZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/FRM.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/FRM.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVhdHVyZXNcRlJNLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/HierarchicalModel.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/HierarchicalModel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVhdHVyZXNcSGllcmFyY2hpY2FsTW9kZWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/Index.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVhdHVyZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/IRM.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/IRM.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVhdHVyZXNcSVJNLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/Partition.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/Partition.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVhdHVyZXNcUGFydGl0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/SSI.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Features/SSI.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVhdHVyZXNcU1NJLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Home/Index.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Home/Privacy.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Projects/Create.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Projects/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Projects/Delete.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Projects/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Projects/Details.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Projects/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Projects/Edit.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Projects/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Projects/Index.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Projects/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Shared/Error.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Shared/_LoginPartial.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/_ViewImports.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/_ViewStart.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Shared/_Layout.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-yygcbonbvh
 
-[D:/Projects/.NET/MICMAC-ISM-MVC/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Shared/_LayoutGeneral.cshtml]
+[D:/Projects/.NET/MICMAC-ISM-MVC/micmac-github/MICMAC-ISM-MVC/MICMAC-ISM-MVC/Views/Shared/_LayoutGeneral.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRHZW5lcmFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-1wqe4t4z3c

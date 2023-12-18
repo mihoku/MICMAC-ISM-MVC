@@ -524,3 +524,15 @@ D:\Projects\.NET\MICMAC-ISM-MVC\MICMAC-ISM-MVC\MICMAC-ISM-MVC\obj\Debug\net7.0\r
 D:\Projects\.NET\MICMAC-ISM-MVC\MICMAC-ISM-MVC\MICMAC-ISM-MVC\obj\Debug\net7.0\MICMAC-ISM-MVC.pdb
 D:\Projects\.NET\MICMAC-ISM-MVC\MICMAC-ISM-MVC\MICMAC-ISM-MVC\obj\Debug\net7.0\MICMAC-ISM-MVC.genruntimeconfig.cache
 D:\Projects\.NET\MICMAC-ISM-MVC\MICMAC-ISM-MVC\MICMAC-ISM-MVC\obj\Debug\net7.0\ref\MICMAC-ISM-MVC.dll
+D:\Projects\.NET\MICMAC-ISM-MVC\micmac-github\MICMAC-ISM-MVC\MICMAC-ISM-MVC\obj\Debug\net7.0\MICMAC-ISM-MVC.csproj.AssemblyReference.cache
+D:\Projects\.NET\MICMAC-ISM-MVC\micmac-github\MICMAC-ISM-MVC\MICMAC-ISM-MVC\obj\Debug\net7.0\MICMAC-ISM-MVC.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\.NET\MICMAC-ISM-MVC\micmac-github\MICMAC-ISM-MVC\MICMAC-ISM-MVC\obj\Debug\net7.0\MICMAC-ISM-MVC.AssemblyInfoInputs.cache
+D:\Projects\.NET\MICMAC-ISM-MVC\micmac-github\MICMAC-ISM-MVC\MICMAC-ISM-MVC\obj\Debug\net7.0\MICMAC-ISM-MVC.AssemblyInfo.cs
+D:\Projects\.NET\MICMAC-ISM-MVC\micmac-github\MICMAC-ISM-MVC\MICMAC-ISM-MVC\obj\Debug\net7.0\MICMAC-ISM-MVC.csproj.CoreCompileInputs.cache
+D:\Projects\.NET\MICMAC-ISM-MVC\micmac-github\MICMAC-ISM-MVC\MICMAC-ISM-MVC\obj\Debug\net7.0\MICMAC-ISM-MVC.MvcApplicationPartsAssemblyInfo.cs
+D:\Projects\.NET\MICMAC-ISM-MVC\micmac-github\MICMAC-ISM-MVC\MICMAC-ISM-MVC\obj\Debug\net7.0\MICMAC-ISM-MVC.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\.NET\MICMAC-ISM-MVC\micmac-github\MICMAC-ISM-MVC\MICMAC-ISM-MVC\obj\Debug\net7.0\MICMAC-ISM-MVC.RazorAssemblyInfo.cache
+D:\Projects\.NET\MICMAC-ISM-MVC\micmac-github\MICMAC-ISM-MVC\MICMAC-ISM-MVC\obj\Debug\net7.0\MICMAC-ISM-MVC.RazorAssemblyInfo.cs
+D:\Projects\.NET\MICMAC-ISM-MVC\micmac-github\MICMAC-ISM-MVC\MICMAC-ISM-MVC\obj\Debug\net7.0\MICMAC-ISM-MVC.dll
+D:\Projects\.NET\MICMAC-ISM-MVC\micmac-github\MICMAC-ISM-MVC\MICMAC-ISM-MVC\obj\Debug\net7.0\refint\MICMAC-ISM-MVC.dll
+D:\Projects\.NET\MICMAC-ISM-MVC\micmac-github\MICMAC-ISM-MVC\MICMAC-ISM-MVC\obj\Debug\net7.0\MICMAC-ISM-MVC.pdb

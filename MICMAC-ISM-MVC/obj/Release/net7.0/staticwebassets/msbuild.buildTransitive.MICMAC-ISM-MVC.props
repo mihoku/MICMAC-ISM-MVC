@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\MICMAC-ISM-MVC.props" />
+</Project>

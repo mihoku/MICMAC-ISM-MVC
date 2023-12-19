@@ -11786,11 +11786,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\.NET\\MICMAC-ISM-MVC\\micmac-github\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC.csproj",
+      "projectUniqueName": "D:\\Projects\\.NET\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC-947dba3530c295cc44deff222c30b227a282c92b\\MICMAC-ISM-MVC-947dba3530c295cc44deff222c30b227a282c92b\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC.csproj",
       "projectName": "MICMAC-ISM-MVC",
-      "projectPath": "D:\\Projects\\.NET\\MICMAC-ISM-MVC\\micmac-github\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC.csproj",
+      "projectPath": "D:\\Projects\\.NET\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC-947dba3530c295cc44deff222c30b227a282c92b\\MICMAC-ISM-MVC-947dba3530c295cc44deff222c30b227a282c92b\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC.csproj",
       "packagesPath": "C:\\Users\\Reza\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\.NET\\MICMAC-ISM-MVC\\micmac-github\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\obj\\",
+      "outputPath": "D:\\Projects\\.NET\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC-947dba3530c295cc44deff222c30b227a282c92b\\MICMAC-ISM-MVC-947dba3530c295cc44deff222c30b227a282c92b\\MICMAC-ISM-MVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Reza\\AppData\\Roaming\\NuGet\\NuGet.Config",

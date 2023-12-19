@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OeUiuAZbqtdx4DoNzstgztZfG+Zz1V10CJRo60XhiKLISUeosSIZaelHzNoQNgIrRYypLPPnPcwL8/T2435asQ==",
+  "dgSpecHash": "s5Fw1YZJj9Qh5oA4OeYhHV8VSdvu6bip/UySzbRb5fkqVL/uCAThnk3jiabE578QQG+EbBupEX/RYzRayMsNkQ==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\.NET\\MICMAC-ISM-MVC\\micmac-github\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC.csproj",
+  "projectFilePath": "D:\\Projects\\.NET\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC-947dba3530c295cc44deff222c30b227a282c92b\\MICMAC-ISM-MVC-947dba3530c295cc44deff222c30b227a282c92b\\MICMAC-ISM-MVC\\MICMAC-ISM-MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Reza\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Reza\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

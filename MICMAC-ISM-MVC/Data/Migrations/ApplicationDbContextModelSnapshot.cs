@@ -22,6 +22,32 @@ namespace MICMACISMMVC.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("MICMAC_ISM_MVC.Models.ExpertElaborations", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("Elaboration")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ExpertID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Theme")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ExpertID");
+
+                    b.ToTable("ExpertElaborations");
+                });
+
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.ExpertOpinions", b =>
                 {
                     b.Property<int>("ID")
@@ -37,6 +63,10 @@ namespace MICMACISMMVC.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Opinion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("StructuralSelfInteractionID")
                         .HasColumnType("int");
 
@@ -46,7 +76,7 @@ namespace MICMACISMMVC.Data.Migrations
 
                     b.HasIndex("StructuralSelfInteractionID");
 
-                    b.ToTable("ExpertOpinions", (string)null);
+                    b.ToTable("ExpertOpinions");
                 });
 
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.Experts", b =>
@@ -73,7 +103,7 @@ namespace MICMACISMMVC.Data.Migrations
 
                     b.HasIndex("ProjectID");
 
-                    b.ToTable("Experts", (string)null);
+                    b.ToTable("Experts");
                 });
 
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.Features", b =>
@@ -100,7 +130,7 @@ namespace MICMACISMMVC.Data.Migrations
 
                     b.HasIndex("ProjectID");
 
-                    b.ToTable("Features", (string)null);
+                    b.ToTable("Features");
                 });
 
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.FinalReachabilityMatrix", b =>
@@ -127,7 +157,7 @@ namespace MICMACISMMVC.Data.Migrations
 
                     b.HasIndex("FeatureAID");
 
-                    b.ToTable("FinalReachabilityMatrix", (string)null);
+                    b.ToTable("FinalReachabilityMatrix");
                 });
 
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.InitialReachabilityMatrix", b =>
@@ -151,7 +181,7 @@ namespace MICMACISMMVC.Data.Migrations
 
                     b.HasIndex("FeatureAID");
 
-                    b.ToTable("InitialReachabilityMatrix", (string)null);
+                    b.ToTable("InitialReachabilityMatrix");
                 });
 
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.MICMACCoordinate", b =>
@@ -175,7 +205,7 @@ namespace MICMACISMMVC.Data.Migrations
 
                     b.HasIndex("FeatureID");
 
-                    b.ToTable("MICMACCoordinate", (string)null);
+                    b.ToTable("MICMACCoordinate");
                 });
 
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.Partition", b =>
@@ -196,7 +226,7 @@ namespace MICMACISMMVC.Data.Migrations
 
                     b.HasIndex("ProjectID");
 
-                    b.ToTable("Partition", (string)null);
+                    b.ToTable("Partition");
                 });
 
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.PartitionAntecedentSet", b =>
@@ -219,7 +249,7 @@ namespace MICMACISMMVC.Data.Migrations
 
                     b.HasIndex("PartitionFeatureSetID");
 
-                    b.ToTable("PartitionAntecedentSet", (string)null);
+                    b.ToTable("PartitionAntecedentSet");
                 });
 
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.PartitionFeatureSet", b =>
@@ -245,7 +275,7 @@ namespace MICMACISMMVC.Data.Migrations
 
                     b.HasIndex("PartitionID");
 
-                    b.ToTable("PartitionFeatureSet", (string)null);
+                    b.ToTable("PartitionFeatureSet");
                 });
 
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.PartitionIntersectionSet", b =>
@@ -268,7 +298,7 @@ namespace MICMACISMMVC.Data.Migrations
 
                     b.HasIndex("PartitionFeatureSetID");
 
-                    b.ToTable("PartitionIntersectionSet", (string)null);
+                    b.ToTable("PartitionIntersectionSet");
                 });
 
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.PartitionReachabilitySet", b =>
@@ -291,7 +321,7 @@ namespace MICMACISMMVC.Data.Migrations
 
                     b.HasIndex("PartitionFeatureSetID");
 
-                    b.ToTable("PartitionReachabilitySet", (string)null);
+                    b.ToTable("PartitionReachabilitySet");
                 });
 
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.ProjectIdentitiy", b =>
@@ -313,7 +343,7 @@ namespace MICMACISMMVC.Data.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("ProjectIdentitiy", (string)null);
+                    b.ToTable("ProjectIdentitiy");
                 });
 
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.StructuralSelfInteraction", b =>
@@ -337,7 +367,7 @@ namespace MICMACISMMVC.Data.Migrations
 
                     b.HasIndex("FeatureAID");
 
-                    b.ToTable("StructuralSelfInteractions", (string)null);
+                    b.ToTable("StructuralSelfInteractions");
                 });
 
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.TransitivityNotes", b =>
@@ -366,7 +396,7 @@ namespace MICMACISMMVC.Data.Migrations
 
                     b.HasIndex("FeatureAID");
 
-                    b.ToTable("TransitivityNotes", (string)null);
+                    b.ToTable("TransitivityNotes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -571,6 +601,17 @@ namespace MICMACISMMVC.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("MICMAC_ISM_MVC.Models.ExpertElaborations", b =>
+                {
+                    b.HasOne("MICMAC_ISM_MVC.Models.Experts", "Expert")
+                        .WithMany("ExpertElaborations")
+                        .HasForeignKey("ExpertID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Expert");
+                });
+
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.ExpertOpinions", b =>
                 {
                     b.HasOne("MICMAC_ISM_MVC.Models.Experts", "Expert")
@@ -665,7 +706,7 @@ namespace MICMACISMMVC.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("MICMAC_ISM_MVC.Models.PartitionFeatureSet", "PartitionFeatureSet")
-                        .WithMany()
+                        .WithMany("PartitionAntecedentSets")
                         .HasForeignKey("PartitionFeatureSetID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -703,7 +744,7 @@ namespace MICMACISMMVC.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("MICMAC_ISM_MVC.Models.PartitionFeatureSet", "PartitionFeatureSet")
-                        .WithMany()
+                        .WithMany("PartitionIntersectionSets")
                         .HasForeignKey("PartitionFeatureSetID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -722,7 +763,7 @@ namespace MICMACISMMVC.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("MICMAC_ISM_MVC.Models.PartitionFeatureSet", "PartitionFeatureSet")
-                        .WithMany()
+                        .WithMany("PartitionReachabilitySets")
                         .HasForeignKey("PartitionFeatureSetID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -815,6 +856,8 @@ namespace MICMACISMMVC.Data.Migrations
 
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.Experts", b =>
                 {
+                    b.Navigation("ExpertElaborations");
+
                     b.Navigation("ExpertOpinions");
                 });
 
@@ -847,6 +890,15 @@ namespace MICMACISMMVC.Data.Migrations
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.Partition", b =>
                 {
                     b.Navigation("PartitionFeatureSets");
+                });
+
+            modelBuilder.Entity("MICMAC_ISM_MVC.Models.PartitionFeatureSet", b =>
+                {
+                    b.Navigation("PartitionAntecedentSets");
+
+                    b.Navigation("PartitionIntersectionSets");
+
+                    b.Navigation("PartitionReachabilitySets");
                 });
 
             modelBuilder.Entity("MICMAC_ISM_MVC.Models.ProjectIdentitiy", b =>
